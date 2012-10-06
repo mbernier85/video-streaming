@@ -83,7 +83,7 @@ namespace Video_Streaming.DataModel
         public string language { get; set; }
 
         [JsonProperty]
-        public bool mature { get; set; }
+        public bool? mature { get; set; }
 
     }
 }

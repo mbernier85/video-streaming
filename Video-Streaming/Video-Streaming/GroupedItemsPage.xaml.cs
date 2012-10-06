@@ -37,11 +37,15 @@ namespace Video_Streaming
         /// </param>
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-            this.DefaultViewModel["Groups"] = sampleDataGroups;
+            // var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
+            // this.DefaultViewModel["Groups"] = sampleDataGroups;
+
+            var lists = await Justin.Stream.List();
+            this.DefaultViewModel["Groups"] = lists;
+
         }
 
         /// <summary>
