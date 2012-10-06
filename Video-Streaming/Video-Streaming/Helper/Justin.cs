@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Video_Streaming.DataModel;
@@ -10,6 +12,8 @@ namespace Video_Streaming
 {
     class Justin
     {
+        private HttpClient webCall;
+
         public class Stream {
             public static IEnumerable<StreamModel> List() {
                 List<StreamModel> streamModels = new List<StreamModel>();
@@ -35,7 +39,6 @@ namespace Video_Streaming
         public class Account { }
 
         public class Category { }
-
-
+        
     }
 }
