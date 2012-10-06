@@ -15,15 +15,35 @@ namespace Video_Streaming
         private HttpClient webCall;
 
         public class Stream {
-            public static IEnumerable<StreamModel> List() {
-                List<StreamModel> streamModels = new List<StreamModel>();
-                StreamModel model = new StreamModel();
-                model.name = "test";
-                model.title = "title test";
+            public static IEnumerable<Stream> List() {
+                List<Stream> streamModels = new List<Stream>();
+                Stream model = new Stream();
                 streamModels.Add(model);
 
                 return streamModels;            
             }
+
+            /// <summary>
+            /// Get aggregate information about all the streams (total viewers, total number of streams, average bitrate)
+            /// </summary>
+            /// <returns></returns>
+            public void Summary() {}
+
+            /// <summary>
+            /// Register a callback url for stream events on a channel - you can register for stream_up and stream_down
+            /// </summary>
+            public void register_callback() {}
+            
+            /// Unregister a pre-registered callback
+            public void unregister_callback() {}
+            
+            /// List all the callbacks currently registered on a given channel
+            public void list_callbacks() {}
+            
+            
+            /// Get information about the live stream results of a search query.
+            public void search() {}
+            
         }
 
         public class User { }
