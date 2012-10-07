@@ -43,7 +43,9 @@ namespace Video_Streaming
             // var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
             // this.DefaultViewModel["Groups"] = sampleDataGroups;
 
-            var lists = await Justin.Stream.List();
+            var lists = new List<DataModel.CategoryModel>();
+            lists.Add(new DataModel.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
+
             this.DefaultViewModel["Groups"] = lists;
 
         }
