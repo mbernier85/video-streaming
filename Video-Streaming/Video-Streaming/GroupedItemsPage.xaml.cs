@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Video_Streaming.DataModel;
+using Video_Streaming.Data;
 
 // The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
 
@@ -41,14 +41,13 @@ namespace Video_Streaming
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            // var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-            // this.DefaultViewModel["Groups"] = sampleDataGroups;
+            //var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
+           // this.DefaultViewModel["Groups"] = sampleDataGroups;
 
-            var lists = new List<DataModel.CategoryModel>();
+            List<Data.CategoryModel> lists = new List<Data.CategoryModel>();
 
-            lists.Add(new DataModel.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
+            lists.Add(new Data.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
             this.DefaultViewModel["Groups"] = lists;
-            this.DefaultViewModel["Items"] = await Justin.Stream.List();
         }
 
         /// <summary>

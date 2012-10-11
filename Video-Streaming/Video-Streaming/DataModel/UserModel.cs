@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Video_Streaming.DataModel
+namespace Video_Streaming.Data
 {
-    class UserModel
+    class UserModel : Video_Streaming.Common.BindableBase
     {
         [JsonProperty("embed_code")]
         public string embedCode { get; set; }

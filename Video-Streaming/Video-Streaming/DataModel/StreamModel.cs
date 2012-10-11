@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Video_Streaming.DataModel
+namespace Video_Streaming.Data
 {
     [Windows.Foundation.Metadata.WebHostHidden]
     class StreamModel : Video_Streaming.Common.BindableBase

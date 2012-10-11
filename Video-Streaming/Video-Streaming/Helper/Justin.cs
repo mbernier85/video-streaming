@@ -7,11 +7,11 @@ using System.Net.Http;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using Video_Streaming.DataModel;
+using Video_Streaming.Data;
 
 namespace Video_Streaming
 {
-    class Justin
+    class Justin : Video_Streaming.Common.BindableBase
     {
         private const string JUSTINTVAPI = "http://api.justin.tv/api/";
         
