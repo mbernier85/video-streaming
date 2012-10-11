@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Video_Streaming.DataModel
 {
-    class StreamModel
+    [Windows.Foundation.Metadata.WebHostHidden]
+    class StreamModel : Video_Streaming.Common.BindableBase
     {
 
         [JsonProperty]

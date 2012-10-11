@@ -10,5 +10,6 @@ namespace Video_Streaming.DataModel
     {
         public IEnumerable<StreamModel> Stream { get; set; }
         public String Title { get; set; }
+    
     }
 }

@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace Video_Streaming.DataModel
 {
-    class ChannelModel
+    class ChannelModel : Video_Streaming.Common.BindableBase
     {
+        public ChannelModel()
+        {
+
+        }
      
         [JsonProperty("subcategory_title")]
         public string subcategoryTitle { get; set; }

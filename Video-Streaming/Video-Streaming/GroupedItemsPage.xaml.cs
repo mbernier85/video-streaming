@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Video_Streaming.DataModel;
 
 // The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
 
@@ -44,10 +45,10 @@ namespace Video_Streaming
             // this.DefaultViewModel["Groups"] = sampleDataGroups;
 
             var lists = new List<DataModel.CategoryModel>();
+
             lists.Add(new DataModel.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
-
             this.DefaultViewModel["Groups"] = lists;
-
+            this.DefaultViewModel["Items"] = await Justin.Stream.List();
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Video_Streaming
 
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            this.Frame.Navigate(typeof(GroupDetailPage), ((SampleDataGroup)group).UniqueId);
+            this.Frame.Navigate(typeof(GroupDetailPage), ((CategoryModel)group).Title);
         }
 
         /// <summary>
