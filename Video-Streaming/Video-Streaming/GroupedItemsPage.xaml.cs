@@ -75,8 +75,8 @@ namespace Video_Streaming
         {
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
-            this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+            StreamModel streamModel = ((StreamModel)e.ClickedItem);
+            this.Frame.Navigate(typeof(ItemDetailPage), streamModel);
         }
     }
 }

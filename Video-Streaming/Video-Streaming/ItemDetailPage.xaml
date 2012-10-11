@@ -16,8 +16,8 @@
         <!-- Collection of items displayed by this page -->
         <CollectionViewSource
             x:Name="itemsViewSource"
-            Source="{Binding Items}"
-            d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
+            Source="{Binding Group}"
+            d:Source="{Binding self, Source={d:DesignInstance Type=data:StreamModel, IsDesignTimeCreatable=True}}"/>
     </Page.Resources>
 
     <!--
@@ -27,8 +27,8 @@
     -->
     <Grid
         Style="{StaticResource LayoutRootStyle}"
-        DataContext="{Binding Group}"
-        d:DataContext="{Binding AllGroups[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}">
+        DataContext="{Binding self}"
+        d:DataContext="{Binding self, Source={d:DesignInstance Type=data:StreamModel, IsDesignTimeCreatable=True}}">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
@@ -68,14 +68,14 @@
                             <common:RichTextColumns x:Name="richTextColumns" Margin="117,0,117,47">
                                 <RichTextBlock x:Name="richTextBlock" Width="560" Style="{StaticResource ItemRichTextStyle}" IsTextSelectionEnabled="False">
                                     <Paragraph>
-                                        <Run FontSize="26.667" FontWeight="Light" Text="{Binding Title}"/>
+                                        <Run FontSize="26.667" FontWeight="Light" Text="{Binding title}"/>
                                         <LineBreak/>
                                         <LineBreak/>
                                         <Run FontWeight="Normal" Text="{Binding Subtitle}"/>
                                     </Paragraph>
                                     <Paragraph LineStackingStrategy="MaxHeight">
                                         <InlineUIContainer>
-                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}" AutomationProperties.Name="{Binding Title}"/>
+                                            <Image x:Name="image" MaxHeight="480" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}" AutomationProperties.Name="{Binding title}"/>
                                         </InlineUIContainer>
                                     </Paragraph>
                                     <Paragraph>
@@ -146,7 +146,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
+            <TextBlock x:Name="pageTitle" Text="{Binding title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1" IsHitTestVisible="false"/>
         </Grid>
 
         <VisualStateManager.VisualStateGroups>
