@@ -38,7 +38,7 @@ namespace Video_Streaming
         /// </param>
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // Allow saved page state to override the initial item to display
             if (pageState != null && pageState.ContainsKey("SelectedItem"))
@@ -48,7 +48,9 @@ namespace Video_Streaming
 
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             StreamModel item = (StreamModel)navigationParameter;
-            this.DefaultViewModel["Group"] = item;
+            this.DefaultViewModel["Group"] = await Justin.Stream.List();
+            this.DefaultViewModel["Items"] = item;
+
             this.flipView.SelectedItem = item;
         }
 

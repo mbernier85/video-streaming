@@ -18,7 +18,7 @@
 
             <!-- Application-specific resources -->
 
-            <x:String x:Key="AppName">Video-Streaming</x:String>
+            <x:String x:Key="AppName">JustStreamIt</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
