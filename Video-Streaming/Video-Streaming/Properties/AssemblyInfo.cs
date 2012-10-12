@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Video-Streaming")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("JustStreamIt")]
+[assembly: AssemblyDescription("Windows 8 Video Streaming App")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Video-Streaming")]
+[assembly: AssemblyProduct("JustStreamIt")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
