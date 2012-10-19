@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
 
@@ -39,11 +40,8 @@ namespace Video_Streaming
         /// session.  This will be null the first time a page is visited.</param>
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            //var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-           // this.DefaultViewModel["Groups"] = sampleDataGroups;
 
-            List<Data.CategoryModel> lists = new List<Data.CategoryModel>();
+            Data.Categories<Data.CategoryModel> lists = new Data.Categories<Data.CategoryModel>();
 
             lists.Add(new Data.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
             this.DefaultViewModel["Groups"] = lists;
