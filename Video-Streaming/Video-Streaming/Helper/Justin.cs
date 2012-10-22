@@ -18,10 +18,14 @@ namespace Video_Streaming
 
         public class Stream
         {
-            public async static Task<IEnumerable<StreamModel>> List()
+            public async static Task<Streams<StreamModel>> List()
             {
                 string webText = await (new HttpClient()).GetStringAsync(JUSTINTVAPI + "stream/list.json");
-                return JsonConvert.DeserializeObject<List<StreamModel>>(webText);                
+                if (webText != null)
+                {
+                    return JsonConvert.DeserializeObject<Streams<StreamModel>>(webText);
+                }
+                return null;
             }
 
             /// <summary>

@@ -41,10 +41,7 @@ namespace Video_Streaming
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var lists = new List<CategoryModel>();
-
-            lists.Add(new CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
-            this.DefaultViewModel["Groups"] = lists;
+            //this.DefaultViewModel["Groups"] = lists;
             this.DefaultViewModel["Items"] = await Justin.Stream.List();
             
         }

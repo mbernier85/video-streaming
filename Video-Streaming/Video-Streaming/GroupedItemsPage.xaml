@@ -22,7 +22,7 @@
             Source="{Binding Groups}"
             IsSourceGrouped="true"
             ItemsPath="Stream"
-            d:Source="{Binding Stream, Source={d:DesignInstance Type=data:CategoryModel, IsDesignTimeCreatable=True}}"/>
+            d:Source="{Binding Groups, Source={d:DesignInstance Type=data:StreamModel, IsDesignTimeCreatable=True}}"/>
     </Page.Resources>
 
     <!--

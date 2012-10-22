@@ -17,7 +17,7 @@
         <CollectionViewSource
             x:Name="itemsViewSource"
             Source="{Binding Items}"
-            d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
+            d:Source="{Binding Items, Source={d:DesignInstance Type=data:StreamModel, IsDesignTimeCreatable=True}}"/>
     </Page.Resources>
 
     <!--
@@ -48,6 +48,8 @@
             SelectionMode="None"
             IsSwipeEnabled="false"
             IsItemClickEnabled="True"
+            DataFetchSize="5"
+            IncrementalLoadingThreshold="2"
             ItemClick="ItemView_ItemClick">
 
             <GridView.Header>

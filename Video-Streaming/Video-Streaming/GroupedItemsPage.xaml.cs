@@ -41,9 +41,9 @@ namespace Video_Streaming
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
 
-            Data.Categories<Data.CategoryModel> lists = new Data.Categories<Data.CategoryModel>();
-
-            lists.Add(new Data.CategoryModel() { Stream = await Justin.Stream.List(), Title = "Live Channels" });
+            var lists = new List<CategoryModel>();
+            Streams<StreamModel> stream = await Justin.Stream.List();
+            lists.Add(new CategoryModel() { Stream = stream, Title = "Live Channels" });
             this.DefaultViewModel["Groups"] = lists;
         }
 
