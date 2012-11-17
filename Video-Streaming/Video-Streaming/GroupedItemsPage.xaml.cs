@@ -43,6 +43,7 @@ namespace Video_Streaming
 
             var lists = new List<CategoryModel>();
             Streams<StreamModel> stream = await Justin.Stream.List();
+            lists.Add(new CategoryModel() { Stream = null, Title = "Categories" });
             lists.Add(new CategoryModel() { Stream = stream, Title = "Live Channels" });
             this.DefaultViewModel["Groups"] = lists;
         }
