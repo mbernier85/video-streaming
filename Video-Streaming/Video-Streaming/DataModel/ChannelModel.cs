@@ -63,7 +63,7 @@ namespace Video_Streaming.Data
         public string timezone { get; set; }
 
         [JsonProperty]
-        public int id { get; set; }
+        public string id { get; set; }
 
         [JsonProperty("views_count")]
         public string viewsCount { get; set; }

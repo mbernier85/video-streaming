@@ -51,7 +51,7 @@ namespace Video_Streaming
             this.DefaultViewModel["Group"] = await Justin.Stream.List();
             this.DefaultViewModel["Items"] = item;
 
-            this.flipView.SelectedItem = item;
+            this.flipView.SelectedItem = item.id;
         }
 
         /// <summary>
